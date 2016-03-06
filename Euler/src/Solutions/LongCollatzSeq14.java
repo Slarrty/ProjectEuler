@@ -4,21 +4,23 @@ public class LongCollatzSeq14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int val = 10;
-		int iter = 0;
-		int greatest = 0;
-		int i;
-		int saved = 0;
+		long val = 10;
+		long iter = 0;
+		long greatest = 0;
+		long i;
+		long saved = 0;
+		long lastiter = 0;
+		
 
 		for (; val < 1000000; val++) {
 			System.out.println(val);
 			for (; true;) {
-				if (iter > 0) {
+				if (iter != 0) {
 					i = saved;
-				}
-				else {
+				} else {
 					i = val;
 				}
+				// --------------------------------------
 				if (i % 2 == 0) {
 					i /= 2;
 					saved = i;
@@ -27,17 +29,21 @@ public class LongCollatzSeq14 {
 					i += 1;
 					saved = i;
 				}
-
+				// --------------------------------------
 				if (i == 1) {
 					iter++;
-					if (iter > greatest) {
+
+					if (iter > lastiter) {
 						greatest = val;
 						break;
 					}
+
 				} else {
 					iter++;
 				}
 			}
+			lastiter = iter;
+			iter = 0;
 		}
 		System.out.println(greatest);
 	}
