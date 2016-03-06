@@ -1,3 +1,5 @@
+package Solutions;
+
 import java.math.BigDecimal;
 
 public class PowerDigitSum16 {
