@@ -1,51 +1,36 @@
 package Solutions;
 
+import java.util.LinkedList;
+
 public class LongCollatzSeq14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		long val = 10;
-		long iter = 0;
 		long greatest = 0;
-		long i;
-		long saved = 0;
-		long lastiter = 0;
-		
+		long longest = 0;
+		LinkedList<Long> list = new LinkedList<Long>();
 
-		for (; val < 1000000; val++) {
-			System.out.println(val);
-			for (; true;) {
-				if (iter != 0) {
-					i = saved;
-				} else {
-					i = val;
-				}
-				// --------------------------------------
+		for (long j = 10; j < 1000000; j++) {
+			long i = j;
+			while (i != 1) {
 				if (i % 2 == 0) {
 					i /= 2;
-					saved = i;
-				} else {
-					i *= 3;
-					i += 1;
-					saved = i;
+					list.add(i);
 				}
-				// --------------------------------------
-				if (i == 1) {
-					iter++;
-
-					if (iter > lastiter) {
-						greatest = val;
-						break;
-					}
-
-				} else {
-					iter++;
+				else {
+					i = (3 * i) + 1;
+					list.add(i);
 				}
 			}
-			lastiter = iter;
-			iter = 0;
+			
+			if (list.size() > longest) {
+				greatest = j;
+				longest = list.size();
+			}
+			
+			list.clear();
 		}
-		System.out.println(greatest);
+		System.out.println("Yielded a number " + greatest + " with a Collatz length of " + longest);
 	}
 
 }
