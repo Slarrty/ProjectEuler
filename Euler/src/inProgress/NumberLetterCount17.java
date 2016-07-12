@@ -1,4 +1,4 @@
-package Solutions;
+package inProgress;
 
 public class NumberLetterCount17 {
 

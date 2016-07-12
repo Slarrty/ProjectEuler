@@ -1,4 +1,4 @@
-package Solutions;
+package inProgress;
 
 import java.math.BigInteger;
 
