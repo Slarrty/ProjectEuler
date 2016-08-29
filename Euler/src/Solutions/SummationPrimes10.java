@@ -5,14 +5,17 @@ public class SummationPrimes10 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		long n = 0;
+		long start = System.currentTimeMillis();
 		for (int i = 2;i < 2000000;i++) {
 			if (isPrime(i)) {
-				System.out.println(i);
 				n += i;
 			}
 		}
 		System.out.println(n);
 		
+		long end = System.currentTimeMillis();
+		
+		System.out.println("Finished in: " + (end - start) + " ms");
 	}
 
 	static boolean isPrime(int n) {

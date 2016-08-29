@@ -6,7 +6,7 @@ public class FactorialDigitSum20 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BigInteger itn = factorial(100);
+		BigInteger itn = factorial(20);
 		String str = itn.toString();
 		
 		int total = 0;
@@ -24,6 +24,16 @@ public class FactorialDigitSum20 {
 		BigInteger total = BigInteger.valueOf(n);
 		for (;count < n;count++) {
 			total = total.multiply(BigInteger.valueOf(n-count));
+		}
+		return total;
+	}
+	
+	static long factorial_long(int n) {
+		int count = 1;
+		long total = n;
+		while (count < n) {
+			total = total * (n-count);
+			count++;
 		}
 		return total;
 	}
