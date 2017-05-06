@@ -1,4 +1,4 @@
-package Solutions;
+package solutions;
 
 public class ThreeAndFiveMults01 {
 
